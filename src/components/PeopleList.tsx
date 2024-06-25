@@ -21,6 +21,7 @@ const PeopleList = () => {
     getNextPageParam: (lastPage) => {
       return lastPage.next || undefined;
     },
+    refetchOnMount: false,
   });
 
   if (isLoading)

@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export async function getAllBlogs(currentPage: number) {
+  alert()
   // await new Promise((resolve, _) => setTimeout(resolve, 1000));
   const { data } = await axios.get(
     `https://jsonplaceholder.typicode.com/posts?_limit=10&_page=${currentPage}`

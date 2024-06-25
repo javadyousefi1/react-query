@@ -20,16 +20,16 @@ const BlogList: React.FC = () => {
   const [pageIndex, setPageIndex] = useState<number>(1);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  useEffect(() => {
-    let nextPage = pageIndex + 1;
-    if (nextPage > MAX_PAGE_SIZE) return;
+  // useEffect(() => {
+  //   let nextPage = pageIndex + 1;
+  //   if (nextPage > MAX_PAGE_SIZE) return;
 
-    queryClient.prefetchQuery({
-      queryKey: ["get-blogs", nextPage],
-      queryFn: () => getAllBlogs(pageIndex),
-      retry: false,
-    });
-  }, [pageIndex]);
+  //   queryClient.prefetchQuery({
+  //     queryKey: ["get-blogs", nextPage],
+  //     queryFn: () => getAllBlogs(pageIndex),
+  //     retry: false,
+  //   });
+  // }, [pageIndex]);
 
   const handleSetPageIndex = (pageIndex: number) => setPageIndex(pageIndex);
 
@@ -50,6 +50,11 @@ const BlogList: React.FC = () => {
     queryKey: ["get-blogs", pageIndex],
     queryFn: () => getAllBlogs(pageIndex),
     retry: false,
+    // refetchOnWindowFocus: false,
+    refetchOnMount: false,
+    // refetchOnReconnect: false,
+    // staleTime: 5000,
+    // gcTime: 5000,
   });
 
   const data = blogsData?.map(

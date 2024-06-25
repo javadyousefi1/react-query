@@ -12,14 +12,14 @@ const CommentList: React.FC<{ selectedPostComment: null | number }> = ({
 
   if (isLoading)
     return (
-      <div className="flex justify-center items-center py-10 flex-col gap-y-5">
+      <div className="flex flex-col items-center justify-center py-10 gap-y-5">
         <Spin />
         <p>Loading...</p>
       </div>
     );
 
   return (
-    <div className="flex flex-col gap-y-2 mt-5 text-lg">
+    <div className="flex flex-col mt-5 text-lg gap-y-2">
       <div>
         <span className="font-bold">Email :</span>{" "}
         <span>{commentData?.email}</span>
