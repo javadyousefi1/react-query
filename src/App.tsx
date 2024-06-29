@@ -12,12 +12,12 @@ import { DownOutlined, UserOutlined } from "@ant-design/icons";
 import Layout from "./layout/Layout";
 function App() {
   const queryClient = new QueryClient({
-    defaultOptions: {
-      queries: {
-        // staleTime: 0,
-        gcTime: 4000,
-      },
-    },
+    // defaultOptions: {
+    //   queries: {
+    //     // staleTime: 0,
+    //     gcTime: 4000,
+    //   },
+    // },
   });
 
   const router = createBrowserRouter([

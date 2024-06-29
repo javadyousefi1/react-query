@@ -51,9 +51,9 @@ const BlogList: React.FC = () => {
     queryFn: () => getAllBlogs(pageIndex),
     retry: false,
     // refetchOnWindowFocus: false,
-    refetchOnMount: false,
+    // refetchOnMount: false,
     // refetchOnReconnect: false,
-    // staleTime: 5000,
+    staleTime: 10000,
     // gcTime: 5000,
   });
 
